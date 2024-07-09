@@ -3,7 +3,7 @@ package settings
 import (
 	"strings"
 
-	"github.com/aquasecurity/starboard-octant-plugin/pkg/plugin/controller"
+	"github.com/khulnasoft/starboard-octant-plugin/pkg/plugin/controller"
 	"github.com/vmware-tanzu/octant/pkg/navigation"
 	"github.com/vmware-tanzu/octant/pkg/plugin/service"
 )

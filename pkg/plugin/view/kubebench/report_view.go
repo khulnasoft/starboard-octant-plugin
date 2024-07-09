@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/aquasecurity/starboard-octant-plugin/pkg/plugin/view"
-	"github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
+	"github.com/khulnasoft/starboard-octant-plugin/pkg/plugin/view"
+	"github.com/khulnasoft/starboard/pkg/apis/khulnasoft/v1alpha1"
 	"github.com/vmware-tanzu/octant/pkg/view/component"
 )
 
@@ -25,10 +25,10 @@ func NewReport(kubeBenchReportsDefined bool, report *v1alpha1.CISKubeBenchReport
 						"> ```\n"+
 						"or\n"+
 						"> ```\n"+
-						"> $ kubectl apply -f https://raw.githubusercontent.com/aquasecurity/starboard/main/deploy/crd/ciskubebenchreports.crd.yaml\n"+
+						"> $ kubectl apply -f https://raw.githubusercontent.com/khulnasoft/starboard/main/deploy/crd/ciskubebenchreports.crd.yaml\n"+
 						"> ```\n"+
 						"\n"+
-						"[starboard-cli]: https://github.com/aquasecurity/starboard#starboard-cli",
+						"[starboard-cli]: https://github.com/khulnasoft/starboard#starboard-cli",
 					v1alpha1.CISKubeBenchReportCRName,
 				)),
 			},
@@ -41,14 +41,14 @@ func NewReport(kubeBenchReportsDefined bool, report *v1alpha1.CISKubeBenchReport
 			{
 				Width: component.WidthFull,
 				View: component.NewMarkdownText("This report is not available.\n" +
-					"> Note that [kube-bench] reports are represented by instances of the `ciskubebenchreports.aquasecurity.github.io` resource.\n" +
+					"> Note that [kube-bench] reports are represented by instances of the `ciskubebenchreports.khulnasoft.github.io` resource.\n" +
 					"> You can create such a report by running [kube-bench] with [Starboard CLI][starboard-cli]:\n" +
 					"> ```\n" +
 					"> $ kubectl starboard scan ciskubebenchreports\n" +
 					"> ```\n" +
 					"\n" +
-					"[kube-bench]: https://github.com/aquasecurity/kube-bench\n" +
-					"[starboard-cli]: https://github.com/aquasecurity/starboard#starboard-cli"),
+					"[kube-bench]: https://github.com/khulnasoft/kube-bench\n" +
+					"[starboard-cli]: https://github.com/khulnasoft/starboard#starboard-cli"),
 			},
 		})
 		return

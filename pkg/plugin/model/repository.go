@@ -7,10 +7,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/aquasecurity/starboard/pkg/apis/aquasecurity"
-	"github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
-	"github.com/aquasecurity/starboard/pkg/kube"
-	"github.com/aquasecurity/starboard/pkg/starboard"
+	"github.com/khulnasoft/starboard/pkg/apis/khulnasoft"
+	"github.com/khulnasoft/starboard/pkg/apis/khulnasoft/v1alpha1"
+	"github.com/khulnasoft/starboard/pkg/kube"
+	"github.com/khulnasoft/starboard/pkg/starboard"
 	"github.com/vmware-tanzu/octant/pkg/plugin/service"
 	"github.com/vmware-tanzu/octant/pkg/store"
 	appsv1 "k8s.io/api/apps/v1"
@@ -175,7 +175,7 @@ func (r *Repository) GetReplicaSetForDeployment(ctx context.Context, object kube
 // Pod it will lookup VulnerabilityReports owned by the Pod's controller.
 func (r *Repository) GetVulnerabilityReportsByOwner(ctx context.Context, owner kube.Object) ([]NamedVulnerabilityReport, error) {
 	unstructuredList, err := r.client.List(ctx, store.Key{
-		APIVersion: fmt.Sprintf("%s/%s", aquasecurity.GroupName, v1alpha1.VulnerabilityReportsCRVersion),
+		APIVersion: fmt.Sprintf("%s/%s", khulnasoft.GroupName, v1alpha1.VulnerabilityReportsCRVersion),
 		Kind:       v1alpha1.VulnerabilityReportKind,
 		Namespace:  owner.Namespace,
 		Selector: &labels.Set{
@@ -240,7 +240,7 @@ func (r *Repository) GetVulnerabilityReportsByOwner(ctx context.Context, owner k
 
 func (r *Repository) GetConfigAuditReportByOwner(ctx context.Context, owner kube.Object) (*v1alpha1.ConfigAuditReport, error) {
 	unstructuredList, err := r.client.List(ctx, store.Key{
-		APIVersion: fmt.Sprintf("%s/%s", aquasecurity.GroupName, v1alpha1.ConfigAuditReportCRVersion),
+		APIVersion: fmt.Sprintf("%s/%s", khulnasoft.GroupName, v1alpha1.ConfigAuditReportCRVersion),
 		Kind:       v1alpha1.ConfigAuditReportKind,
 		Namespace:  owner.Namespace,
 		Selector: &labels.Set{
@@ -293,7 +293,7 @@ func (r *Repository) GetConfigAuditReportByOwner(ctx context.Context, owner kube
 
 func (r *Repository) GetCISKubeBenchReport(ctx context.Context, node string) (report *v1alpha1.CISKubeBenchReport, err error) {
 	unstructuredList, err := r.client.List(ctx, store.Key{
-		APIVersion: fmt.Sprintf("%s/%s", aquasecurity.GroupName, v1alpha1.CISKubeBenchReportCRVersion),
+		APIVersion: fmt.Sprintf("%s/%s", khulnasoft.GroupName, v1alpha1.CISKubeBenchReportCRVersion),
 		Kind:       v1alpha1.CISKubeBenchReportKind,
 		Selector: &labels.Set{
 			starboard.LabelResourceKind: string(kube.KindNode),
@@ -320,7 +320,7 @@ func (r *Repository) GetCISKubeBenchReport(ctx context.Context, node string) (re
 
 func (r *Repository) GetKubeHunterReport(ctx context.Context) (report *v1alpha1.KubeHunterReport, err error) {
 	unstructuredList, err := r.client.List(ctx, store.Key{
-		APIVersion: fmt.Sprintf("%s/%s", aquasecurity.GroupName, v1alpha1.KubeHunterReportCRVersion),
+		APIVersion: fmt.Sprintf("%s/%s", khulnasoft.GroupName, v1alpha1.KubeHunterReportCRVersion),
 		Kind:       v1alpha1.KubeHunterReportKind,
 		Selector: &labels.Set{
 			starboard.LabelResourceKind: ClusterKind,

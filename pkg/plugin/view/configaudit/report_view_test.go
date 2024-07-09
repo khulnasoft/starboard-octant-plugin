@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/aquasecurity/starboard-octant-plugin/pkg/plugin/view/configaudit"
-	"github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
+	"github.com/khulnasoft/starboard-octant-plugin/pkg/plugin/view/configaudit"
+	"github.com/khulnasoft/starboard/pkg/apis/khulnasoft/v1alpha1"
 	"github.com/stretchr/testify/assert"
 	"github.com/vmware-tanzu/octant/pkg/view/component"
 )

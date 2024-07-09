@@ -3,11 +3,11 @@ package controller
 import (
 	"fmt"
 
-	"github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
+	"github.com/khulnasoft/starboard/pkg/apis/khulnasoft/v1alpha1"
 
-	"github.com/aquasecurity/starboard-octant-plugin/pkg/plugin/view/kubehunter"
+	"github.com/khulnasoft/starboard-octant-plugin/pkg/plugin/view/kubehunter"
 
-	"github.com/aquasecurity/starboard-octant-plugin/pkg/plugin/model"
+	"github.com/khulnasoft/starboard-octant-plugin/pkg/plugin/model"
 
 	"github.com/vmware-tanzu/octant/pkg/plugin/service"
 	"github.com/vmware-tanzu/octant/pkg/view/component"

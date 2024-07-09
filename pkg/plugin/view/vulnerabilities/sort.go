@@ -1,7 +1,7 @@
 package vulnerabilities
 
 import (
-	starboard "github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
+	starboard "github.com/khulnasoft/starboard/pkg/apis/khulnasoft/v1alpha1"
 )
 
 type VulnerabilityItems []starboard.Vulnerability

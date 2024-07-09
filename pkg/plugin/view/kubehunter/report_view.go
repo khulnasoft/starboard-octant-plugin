@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/aquasecurity/starboard-octant-plugin/pkg/plugin/view"
-	starboard "github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
+	"github.com/khulnasoft/starboard-octant-plugin/pkg/plugin/view"
+	starboard "github.com/khulnasoft/starboard/pkg/apis/khulnasoft/v1alpha1"
 	"github.com/vmware-tanzu/octant/pkg/view/component"
 )
 
@@ -25,10 +25,10 @@ func NewReport(kubeHunterReportsDefined bool, report *starboard.KubeHunterReport
 						"> ```\n"+
 						"or\n"+
 						"> ```\n"+
-						"> $ kubectl apply -f https://raw.githubusercontent.com/aquasecurity/starboard/main/deploy/crd/kubehunterreports.crd.yaml\n"+
+						"> $ kubectl apply -f https://raw.githubusercontent.com/khulnasoft/starboard/main/deploy/crd/kubehunterreports.crd.yaml\n"+
 						"> ```\n"+
 						"\n"+
-						"[starboard-cli]: https://github.com/aquasecurity/starboard#starboard-cli",
+						"[starboard-cli]: https://github.com/khulnasoft/starboard#starboard-cli",
 					starboard.KubeHunterReportCRName,
 				)),
 			},
@@ -41,14 +41,14 @@ func NewReport(kubeHunterReportsDefined bool, report *starboard.KubeHunterReport
 			{
 				Width: component.WidthFull,
 				View: component.NewMarkdownText("This report is not available.\n" +
-					"> Note that [kube-hunter] reports are represented by instances of the `kubehunterreports.aquasecurity.github.io` resource.\n" +
+					"> Note that [kube-hunter] reports are represented by instances of the `kubehunterreports.khulnasoft.github.io` resource.\n" +
 					"> You can create such a report by running [kube-hunter] with [Starboard CLI][starboard-cli]:\n" +
 					"> ```\n" +
 					"> $ kubectl starboard scan kubehunterreports\n" +
 					"> ```\n" +
 					"\n" +
-					"[kube-hunter]: https://github.com/aquasecurity/kube-hunter\n" +
-					"[starboard-cli]: https://github.com/aquasecurity/starboard#starboard-cli"),
+					"[kube-hunter]: https://github.com/khulnasoft/kube-hunter\n" +
+					"[starboard-cli]: https://github.com/khulnasoft/starboard#starboard-cli"),
 			},
 		})
 		return

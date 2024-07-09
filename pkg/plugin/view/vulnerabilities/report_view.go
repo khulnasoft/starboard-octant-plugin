@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/aquasecurity/starboard-octant-plugin/pkg/plugin/model"
-	"github.com/aquasecurity/starboard-octant-plugin/pkg/plugin/view"
-	"github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
-	"github.com/aquasecurity/starboard/pkg/kube"
+	"github.com/khulnasoft/starboard-octant-plugin/pkg/plugin/model"
+	"github.com/khulnasoft/starboard-octant-plugin/pkg/plugin/view"
+	"github.com/khulnasoft/starboard/pkg/apis/khulnasoft/v1alpha1"
+	"github.com/khulnasoft/starboard/pkg/kube"
 	"github.com/vmware-tanzu/octant/pkg/view/component"
 )
 
@@ -29,10 +29,10 @@ func NewReport(workload kube.Object, vulnerabilityReportsDefined bool, reports [
 						"> ```\n"+
 						"or\n"+
 						"> ```\n"+
-						"> $ kubectl apply -f https://raw.githubusercontent.com/aquasecurity/starboard/main/deploy/crd/vulnerabilityreports.crd.yaml\n"+
+						"> $ kubectl apply -f https://raw.githubusercontent.com/khulnasoft/starboard/main/deploy/crd/vulnerabilityreports.crd.yaml\n"+
 						"> ```\n"+
 						"\n"+
-						"[starboard-cli]: https://github.com/aquasecurity/starboard#starboard-cli",
+						"[starboard-cli]: https://github.com/khulnasoft/starboard#starboard-cli",
 					v1alpha1.VulnerabilityReportsCRName,
 				)),
 			},
@@ -52,8 +52,8 @@ func NewReport(workload kube.Object, vulnerabilityReportsDefined bool, reports [
 						"> $ kubectl starboard scan vulnerabilityreports %[2]s/%[3]s --namespace %[4]s\n"+
 						"> ```\n"+
 						"\n"+
-						"[trivy]: https://github.com/aquasecurity/trivy\n"+
-						"[starboard-cli]: https://github.com/aquasecurity/starboard#starboard-cli",
+						"[trivy]: https://github.com/khulnasoft/trivy\n"+
+						"[starboard-cli]: https://github.com/khulnasoft/starboard#starboard-cli",
 					v1alpha1.VulnerabilityReportsCRName,
 					strings.ToLower(string(workload.Kind)),
 					workload.Name,

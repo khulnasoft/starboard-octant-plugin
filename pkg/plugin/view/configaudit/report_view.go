@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/aquasecurity/starboard-octant-plugin/pkg/plugin/view"
-	"github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
-	"github.com/aquasecurity/starboard/pkg/kube"
+	"github.com/khulnasoft/starboard-octant-plugin/pkg/plugin/view"
+	"github.com/khulnasoft/starboard/pkg/apis/khulnasoft/v1alpha1"
+	"github.com/khulnasoft/starboard/pkg/kube"
 	"github.com/vmware-tanzu/octant/pkg/view/component"
 )
 
@@ -34,10 +34,10 @@ func NewReport(workload kube.Object, isConfigAuditReportsCRDefined bool, report 
 						"> ```\n"+
 						"or\n"+
 						"> ```\n"+
-						"> $ kubectl apply -f https://raw.githubusercontent.com/aquasecurity/starboard/main/deploy/crd/configauditreports.crd.yaml\n"+
+						"> $ kubectl apply -f https://raw.githubusercontent.com/khulnasoft/starboard/main/deploy/crd/configauditreports.crd.yaml\n"+
 						"> ```\n"+
 						"\n"+
-						"[starboard-cli]: https://github.com/aquasecurity/starboard#starboard-cli",
+						"[starboard-cli]: https://github.com/khulnasoft/starboard#starboard-cli",
 					v1alpha1.ConfigAuditReportCRName,
 				)),
 			},
@@ -58,7 +58,7 @@ func NewReport(workload kube.Object, isConfigAuditReportsCRDefined bool, report 
 						"> ```\n"+
 						"\n"+
 						"[polaris]: https://www.fairwinds.com/polaris\n"+
-						"[starboard-cli]: https://github.com/aquasecurity/starboard#starboard-cli",
+						"[starboard-cli]: https://github.com/khulnasoft/starboard#starboard-cli",
 					v1alpha1.ConfigAuditReportCRName,
 					strings.ToLower(string(workload.Kind)),
 					workload.Name,
